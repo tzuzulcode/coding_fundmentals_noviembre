@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #semaforo{
+            /* Ancho: */
+            width: 100px;
+            /* Alto */
+            height: 100px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <!-- Id -> Identificador unico -->
+    <div id="semaforo">
+        <!-- Esto es el inerText -->
+        Verde
+    </div>
+    <button id="boton">Presionar</button>
+    <script>
+        //Nos devuelve una referencia a un elemento
+        let semaforo = document.getElementById("semaforo")
+        let boton = document.getElementById("boton")
+        let saludo = "Hola, esta en "
+
+        let color = "verde"
+
+        //Evento: click, pasar el cursor, focus, submit, drag.
+        boton.onclick = function(){
+            if(color==="verde"){
+                semaforo.style.backgroundColor = "yellow"
+                semaforo.innerText = saludo + "Amarillo"
+                color = "amarillo"
+            }else if(color==="amarillo"){
+                semaforo.style.backgroundColor = "red"
+                semaforo.innerText = "Rojo"
+                color = "rojo"
+            }else if(color==="rojo"){
+                semaforo.style.backgroundColor = "chartreuse"
+                semaforo.innerText = "Verde"
+                color = "verde"
+            }
+        }
+
+    </script>
+</body>
+</html>
