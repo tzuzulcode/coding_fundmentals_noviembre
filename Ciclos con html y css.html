@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #cuadrado-verde{
+            background-color: greenyellow;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+        }
+        #cuadrado-azul{
+            background-color: skyblue;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+        }
+        #cuadrado-morado{
+            background-color: purple;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+        }
+        /* ID -> # */
+        /* class -> . */
+        .cuadrado-amarillo{
+            background-color: yellow;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+            margin-top: 15px;
+        }
+        .cuadrado-rosa{
+            background-color: pink;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+            margin-top: 15px;
+        }
+        .cuadrado-azul{
+            background-color: skyblue;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+            margin-top: 15px;
+        }
+        .cuadrado-naranja{
+            background-color: orange;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+            margin-top: 15px;
+        }
+        .cuadrado-verde-claro{
+            background-color: lightseagreen;
+            /* Ancho */
+            width: 200px;
+            /* Altura */
+            height: 200px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comportamiento</h1>
+    <div id="cuadrado-verde">
+
+    </div>
+    <div id="cuadrado-azul">
+
+    </div>
+    <div id="cuadrado-morado">
+
+    </div>
+    <div class="cuadrado-amarillo">
+
+    </div>
+    <div class="cuadrado-amarillo">
+        
+    </div>
+    <p>Hola mundo</p>
+    
+    <script>
+        /*
+        Construya bucles for que realicen las siguientes tareas:
+
+        Imprime los números del 0 al 20, un número por línea.
+        Imprima solo los valores Impares del 3 al 29, un número por línea.
+        Imprima los números PAR 12 hasta -14 en orden descendente, un número por línea.
+        Imprime los números del 50 al 20 en orden descendente, pero solo si los números son múltiplos de 3.
+        */
+
+        // JS ya tiene funciones que modifican el documento
+
+        function crearDiv(color,mensaje){
+            // Crea un elemento div
+            var div = document.createElement("div")
+            // Define el texto del div
+            div.innerText = mensaje
+            div.className="cuadrado-"+color
+            // Añade el elemento al body
+            document.body.appendChild(div)
+        }
+
+        function imprimirSerieNumeros(numero){
+            for(var i=0;i<numero;i++){
+                //Instrucciones
+                crearDiv("amarillo","El numero es: "+i)
+            }
+        }
+        function imprimirSerieNumerosUnDiv(numero){
+
+            var div = document.createElement("div")
+            div.className="cuadrado-amarillo"
+
+            for(var i=0;i<numero;i++){
+                //Instrucciones
+                // Crea un elemento div
+                
+                // Define el texto del div
+                div.innerText = div.innerText + " "+ i
+                
+                // Añade el elemento al body
+                document.body.appendChild(div)
+            }
+        }
+
+        function imprimirNumerosImpares(inicio,final){
+            for(var i=inicio;i<final;i++){
+                //Instrucciones
+
+                //Vericando si es impar
+                //!= significa diferente
+                if( i%2 != 0){
+                    //console.log("Impar:",i)
+                    crearDiv("rosa","Impar: "+i)
+                }else{
+                    //console.log("Par:",i)
+                    crearDiv("azul","Par: "+i)
+                }
+            }
+        }
+
+        function imprimirNumerosParesDescendente(inicio,final){
+            for(var i=inicio;i>-final;i=i-1){
+                //Instrucciones
+                if( i%2 != 0){
+                    //console.log("Impar:",i)
+                    crearDiv("naranja","Impar: "+i)
+                }else{
+                    //console.log("Par:",i)
+                    crearDiv("verde-claro","Par: "+i)
+                }
+            }
+        }
+
+        function imprimirNumerosMultiplosTresDescendente(inicio,final){
+            for(var i=inicio;i>final;i=i-1){
+                //Instrucciones
+                if( i%3 == 0){
+                    crearDiv("azul","Divisible entre 3: "+i)
+                }
+            }
+        }
+
+        // Ejecutar la funcion
+        imprimirSerieNumeros(5)
+        imprimirSerieNumerosUnDiv(5)
+        imprimirNumerosImpares(5,10)
+        imprimirNumerosParesDescendente(10,5)
+        imprimirNumerosMultiplosTresDescendente(30,10)
+
+    </script>
+</body>
+</html>

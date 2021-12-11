@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 1px;
+        }
+        p{
+            background-color: lavender;
+            margin: 1px;
+            padding: 2px;
+        }
+        img{
+            /* WIDTH es ancho */
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p>innerText</p>
+    <!-- src viene de source o de fuente -->
+    <img src="img/imagenCF.jpeg" alt="Imagen de prueba">
+    <img src="https://images.unsplash.com/photo-1628214460162-614fdb3985ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1475&q=80" alt="Imagen de prueba">
+    <script>
+        //Arrays o arreglos o listas o vectores
+        var producto1 = "Cereal"
+        var producto2 = "Chocolate"
+        var producto3 = "Arroz"
+        var producto4 = "Jabón"
+
+        //Estructura de datos
+        var productos = [ "Cereal","Chocolate","Arroz","Jabón","Sandia","Lechuga" ]
+        var numeros = [ 5,4,35.6,1231231,0.434534 ]
+
+        //Podemos almacenar lo que queramos
+        var cosas = [ 13,"Hola",true,false,123.1234534 ]
+
+        console.log(productos)
+        console.log(numeros)
+        console.log(cosas)
+
+        console.log(productos[2])
+        console.log(productos[1])
+
+        // Son cosas diferentes la longitud o numero de elementos que la posicion del elemento
+
+        for(var i=0;i<productos.length;i++){
+            var p = document.createElement("p")
+            p.innerText = productos[i]
+            document.body.appendChild(p)
+        }
+
+    </script>
+</body>
+</html>

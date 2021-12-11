@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Construya bucles for que realicen las siguientes tareas:
+
+        Imprime los números del 0 al 20, un número por línea.
+        Imprima solo los valores Impares del 3 al 29, un número por línea.
+        Imprima los números PAR 12 hasta -14 en orden descendente, un número por línea.
+        Imprime los números del 50 al 20 en orden descendente, pero solo si los números son múltiplos de 3.
+        */
+
+        function imprimirSerieNumeros(numero){
+            for(var i=0;i<numero;i++){
+                //Instrucciones
+                console.log(i)
+            }
+        }
+
+        function imprimirNumerosImpares(inicio,final){
+            for(var i=inicio;i<final;i++){
+                //Instrucciones
+
+                //Vericando si es impar
+                //!= significa diferente
+                if( i%2 != 0){
+                    console.log("Impar:",i)
+                }else{
+                    console.log("Par:",i)
+                }
+            }
+        }
+
+        function imprimirNumerosParesDescendente(inicio,final){
+            for(var i=inicio;i>-final;i=i-1){
+                //Instrucciones
+                if( i%2 != 0){
+                    console.log("Impar:",i)
+                }else{
+                    console.log("Par:",i)
+                }
+            }
+        }
+
+        function imprimirNumerosMultiplosTresDescendente(inicio,final){
+            for(var i=inicip;i>final;i=i-1){
+                //Instrucciones
+                if( i%3 == 0){
+                    console.log("Divisible entre 3:",i)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let yo = {
+            //Aquí definimos propiedades y métodos
+            // key : value
+            nombre:"Tzuzul",
+            edad:23,
+            estadoCivil:false,
+            intereses:["Musica","Cine","Programación","Videojuegos"],
+            direccion:{
+                cp:100300,
+                ciudad:"Ciudad de México",
+                calle:"Calle algo",
+                numero:"120202",
+
+            },
+            dinero:12,
+            //Metodos
+            respirar:function(){
+                alert("Estoy respirando...")
+            },
+            inhalar:function(){
+                alert(`Yo ${this.nombre} estoy inhalando...`)
+            }
+
+
+        }
+        let yo2 = {
+            //Aquí definimos propiedades y métodos
+            // key : value
+            nombre:"Tzuzul",
+            edad:23,
+            estadoCivil:false,
+            intereses:["Musica","Cine","Programación","Videojuegos"],
+            direccion:{
+                cp:100300,
+                ciudad:"Ciudad de México",
+                calle:"Calle algo",
+                numero:"120202",
+
+            },
+            dinero:12,
+            //Metodos
+            respirar:function(){
+                alert("Estoy respirando...")
+            },
+            inhalar:function(){
+                alert(`Yo ${this.nombre} estoy inhalando...`)
+            }
+
+
+        }
+
+        let maxi_objeto = {
+            nombre:"Maximiliano",
+            edad:24,
+            estadoCivil:false,
+            intereses:["Musica","Cine","Programación","Videojuegos"]
+        }
+
+        function hacerAlgo(){
+            //Bloque de codigo
+            //Definimos la funcionalidad o el procedimiento a seguir
+        }
+
+        //document.body.appendChild()
+
+        console.log()
+
+        yo.respirar()    
+        alert(yo.direccion.cp) 
+
+        //Clases siempre se nombran con mayúscula
+        class Persona{
+            nombre
+            edad
+            estadoCivil
+            intereses
+
+            //COnstructor
+            constructor(nombre,edad,estadoCivil,gustos){
+                this.nombre = nombre
+                this.edad = edad
+                this.estadoCivil = estadoCivil
+                this.intereses = gustos
+            }
+            
+            respirar(){
+                //alert("Yo "+this.nombre +", Estoy respirando...")
+                this.inhalar()
+                alert(`Yo ${this.nombre} estoy respirando...`)
+                this.exhalar()
+            }
+
+            inhalar(){
+                alert(`Yo ${this.nombre} estoy inhalando...`)
+            }
+            exhalar(){
+                alert(`Yo ${this.nombre} estoy exhalando...`)
+            }
+        }
+
+        //Creando una instancia de una clase = creando un objeto
+        let tzuzul = new Persona("Tzuzul",23,false,["Musica","Cine","Programación","Videojuegos"])
+        let tzuzul1 = new Persona("Tzuzul")
+        let tzuzul2 = new Persona("Tzuzul",23,false)
+        let tzuzul3 = new Persona("Tzuzul",23)
+        let tzuzul4 = new Persona("Tzuzul",23,null,["Musica","Cine","Programación","Videojuegos"])
+        let tzuzul5 = new Persona("Tzuzul5",50,true,["Negocios","Golf","Musica"])
+        let maxi = new Persona("Maximiliano")
+
+        console.log(tzuzul)
+        console.log(tzuzul1)
+        console.log(tzuzul2)
+        console.log(tzuzul3)
+        console.log(tzuzul4)
+        console.log(tzuzul5)
+        console.log(maxi)
+
+        let personas = [tzuzul,tzuzul2,tzuzul3,maxi]
+
+        console.log(personas)
+    </script>
+</body>
+</html>

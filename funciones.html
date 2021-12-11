@@ -1,0 +1,47 @@
+<body>
+    <script>
+        //Valor global, puede ser utilizado en cada funcion
+        var PI = 3.1416
+        
+        //Funcion
+        //Creado una nueva función
+        // (parametro1,parametro2,parametro3,...)
+        function miPrimeraFuncion(n,x,y){
+
+            console.log(n,x,y)
+            //Con los parametros: "n","x" y "y" son dinamicos
+
+            //Siempre utilizo los mismos valores. Estatico
+            // var n = 3
+
+            // var x = 3
+            // var y = 4
+
+            var residuo = n % x
+            var residuo2 = n % y
+
+            var operacion = PI * 12
+
+            if(residuo == 0){
+                console.log("Es divisible")
+            }else{
+                console.log("No es divisible")
+            }
+            
+            if(residuo2 == 0){
+                console.log("Es divisible")
+            }else{
+                console.log("No es divisible")
+            }
+        }
+
+        //Utilizando la funcion
+        //Ejecutar la funcion
+        miPrimeraFuncion(3,3,4)
+        miPrimeraFuncion(6,6,12)
+        miPrimeraFuncion(15,34,12)
+        miPrimeraFuncion(15,45,60)
+        miPrimeraFuncion(1,2,3)
+
+    </script>
+</body>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Matrices -->
+
+    <!-- Agrupador div -->
+    <div>
+
+    </div>
+
+    <!-- tablas -->
+    <!-- Table crea una tabla -->
+    <table>
+        <thead>
+            <!-- th: columna de la cabecera -->
+            <tr>
+                <th>Nombre</th>
+                <th>c1</th>
+                <th>c2</th>
+                <th>c3</th>
+                <th>c4</th>
+                <th>c5</th>
+                <th>c6</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody id="calificaciones">
+            <tr>
+                <td>Tzuzul</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>8</td>
+                <td>5.2</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        var arreglo = [ 1,2,3,4,5 ]
+
+        //Una matriz es un arreglo que tiene arreglos adentro
+        var matriz = [ [ 1,2,3,4,5 ],[ 6,7,8,9,10 ],[ 11,12,13,14,15 ] ]
+        var calificacionesJuan = matriz[1][3]
+        console.log(calificacionesJuan)
+
+        for(var i = 0; i<matriz.length;i++){
+            console.log(matriz[i]) // matriz[i] es un arreglo
+            var c = matriz[i] // calificaciones es un arreglo
+            for( var j =0 ; j<c.length;j++){
+                //console.log(c[j])
+            }
+        }
+
+        let calificaciones = [["Maxi",10,9,10,9,10,10],["Jeanella",10,10,10,10,10,10],["Maira",8,8,8,8,8,10]]
+
+        let bodyTabla = document.getElementById("calificaciones")
+
+        for(let i=0;i<calificaciones.length;i++){
+            let fila = document.createElement("tr")
+
+            let suma = 0
+            for(let j=0;j<calificaciones[i].length;j++){
+                let columna = document.createElement("td")
+                columna.innerText = calificaciones[i][j]
+
+                //Condicion para no sumar el nombre
+                if(j!=0){
+                    suma=suma+calificaciones[i][j]
+                }
+                
+                fila.appendChild(columna)
+            }
+            let final = document.createElement("td")
+
+            let calificacionFinal = suma / (calificaciones[i].length-1) // Se utilizan parentesis para indicar que se resuelve primero
+            final.innerText = calificacionFinal
+
+            fila.appendChild(final)
+            bodyTabla.appendChild(fila)
+        }
+
+        
+
+    </script>
+</body>
+</html>
