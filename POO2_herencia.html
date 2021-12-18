@@ -12,10 +12,11 @@
 
         // Objetos de JavaScript serán dinámicos
         class Pokemon{
-            constructor(tamaño,ataque,defensa){
-                this.tamaño = tamaño
+            constructor(tamaño,ataque,defensa,vida){
+                this.#tamaño = tamaño
                 this.ataque = ataque
                 this.defensa = defensa
+                this.#vida = vida // Private property
             }
 
             comer(){
@@ -39,15 +40,27 @@
 
         //Subclase
         class Agua extends Pokemon{
-            tipoAtaques = "Agua"
+            static tipoAtaques = "Agua" // Static property
+            #sonido = "Sonido" // private property
+
             constructor(debilidad, tamaño, ataque, defensa){
                 super(tamaño, ataque, defensa)
                 this.debilidad = debilidad
                 //this.ataque -> undefined
             }
 
-            chorroDeAgua(){
+            //Funcion privada
+            #chorroDeAgua(){
                 console.log("Lanzando ataque...")
+            }
+
+            //Funcion statica
+            static saberTipoAtaques(){
+                return "Agua"
+            }
+
+            toString(){
+
             }
             
         }
@@ -55,10 +68,11 @@
         const squirtle = new Agua("Electrico", "Pequeño", 100, 120)
         const mudkip = new Agua("Electrico", "Pequeño", 110, 110)
         const charmander = new Fuego("Agua","Pequeño",120,90)
-        console.log(squirtle)
-        console.log(mudkip)
 
-        
+        mudkip
+        console.log(squirtle)
+        console.log(mudkip.toString())
+
 
     </script>
 </body>

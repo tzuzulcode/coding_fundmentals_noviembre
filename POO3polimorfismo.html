@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Description: 
+            (a:Pokemon,b:Pokemon)->Boolean
+
+        */
+        function ataquePokemon(pokemon1,pokemon2){
+            if(pokemon2.vida-pokemon1.ataque>0){
+                pokemon2.vida = pokemon2.vida - pokemon1.ataque
+            }else{
+                pokemon2.vida = 0
+            }
+            return true
+        }
+
+        function ataque({ataque},pokemon2){
+            return ataque+pokemon2.ataque
+        }
+
+        //Object literals
+        const pikachu = {
+            nombre:"Pikachu",
+            vida:100,
+            ataque:20,
+            gustos:["bailar","pandilla"],
+            toString:function(){
+                return `Nombre: ${this.nombre}, vida: ${this.vida}`
+            },
+            valueOf:function(){
+                return this.ataque
+            }
+        }
+        const charmander = {
+            nombre:"Charmander",
+            vida:110,
+            ataque:18,
+            toString:function(){
+                return `Nombre: ${this.nombre}, vida: ${this.vida}`
+            },
+            valueOf:function(){
+                return this.ataque
+            }
+        }
+        console.log(ataquePokemon(pikachu,charmander)) //"Tzuzul5"
+        console.log({pikachu,charmander})
+        console.log(ataquePokemon(charmander,pikachu)) //"Tzuzul5"
+        console.log({pikachu,charmander})
+        console.log(ataquePokemon(pikachu,charmander)) //"Tzuzul5"
+        console.log({pikachu,charmander})
+
+
+        console.log(ataque(pikachu,charmander))
+        console.log(pikachu.toString())
+
+        //Destructuring
+
+        //let {vida,ataque} = pikachu
+        //Lo de arriba es exactamente igual a:
+        //let vida = pikachu.vida
+        //let ataque = pikachu.ataque
+
+        let {vida} = pikachu
+        console.log(vida)
+
+    </script>
+</body>
+</html>
