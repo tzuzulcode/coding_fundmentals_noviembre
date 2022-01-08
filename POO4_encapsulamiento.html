@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const persona = {
+            nombre:"Tzuzul",
+            direccion:"dirección falsa",
+            _dinero:500,
+            get dinero(){
+                return this._dinero
+            },
+            set dinero(din){
+                //"hola" -> NaN
+                // "5"==5 -> true
+                // "5" === 5 -> false
+                // isNaN -> devuelve true si NO se puede convertir a Number
+                // isNaN -> devuelve false si SE PUEDE convertir a Number
+                if(!isNaN(din)){
+                    this._dinero = Number.parseFloat(din)
+                }
+                
+            }
+        }
+        const personaInicial = {...persona}
+        console.log(personaInicial)
+
+        persona.dinero = 600
+        persona.dinero = "hola"
+        persona.dinero = "500.50"
+
+        const objeto1 = {
+            valor1:"Valor"
+        }
+        const numero1 = 5
+
+        function comparar(objeto){
+            objeto.valor1 = "Valor 2"
+
+            if(objeto1.valor1==objeto.valor1){
+
+            }
+        }
+
+
+        console.log(persona)
+
+        class Persona{
+            #dinero = 0
+            constructor(nombre,direccion,dinero){
+                this.#dinero = dinero
+            }
+
+            get dinero(){
+                return this.#dinero
+            }
+
+            set dinero(din){
+                //"hola" -> NaN
+                // "5"==5 -> true
+                // "5" === 5 -> false
+                // isNaN -> devuelve true si NO se puede convertir a Number
+                // isNaN -> devuelve false si SE PUEDE convertir a Number
+                if(!isNaN(din)){
+                    this.#dinero = Number.parseFloat(din)
+                }
+                
+            }
+            
+        }
+        
+        const tzuzul = new Persona("Tzuzul","Dirección de ejemplo",250)
+        tzuzul.dinero = "505.34"
+        console.log(tzuzul.dinero)
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // keyword o <Type> nombreFuncion():<Type>{
+
+        // }
+        // miFuncionNormal() // Se ejecutaría sin problemas
+        // miFuncionArrow() // Exception. Accediendo antes de inicialización
+        
+        
+        //Functions
+        function miFuncionNormal(params) {
+            console.log("Hola, funcion normal")
+        }
+
+        // Arrow functions: Tiene variaciones
+        // Las arrow function nos permiten generar funcionas más facilmente
+        ()=>{
+
+        } // Un solo uso
+
+        // Reutilizando arrow functions
+        const miFuncionArrow = ()=>{
+            console.log("Hola, funcion Arrow")
+        }
+
+        miFuncionArrow() // Evitar hoisting. Se realiza sin problema
+
+
+        // Variaciones de funciones arrow
+
+        //recibiendo parámetros
+        const sumar = (param1,param2)=>{
+            return param1 + param2
+        }
+
+        console.log(sumar)
+        console.log(sumar(5,10))
+
+
+        //Recibiendo un parámetro. Retirar parentesis
+        const saludar = nombre => {
+            const mensaje = "Hola, amigo "+nombre
+            return mensaje
+        }
+
+        console.log(saludar("Maxi"))
+
+        //recibiendo un parametro, usando una expresion como return.
+        //Se quitan llaves y return
+        // EL return se vuelve implicito
+        const saludarCorto = nombre => "Hola, amigo "+nombre
+
+        function saludarLargo(nombre){
+            return "Hola, amigo "+nombre
+        }
+
+        // Ejemplos usando arrow functions
+
+        const frutas = ["🍉","🍓","🍊","🍓","🍋"]
+        for(let i = 0; i<frutas.length;i++){
+            console.log(frutas[i])
+        }
+
+        //Callback: Un parametro que es una funcion
+        frutas.forEach(function(fruta){
+            console.log(fruta)
+        })
+
+        //Arrow functions
+        frutas.forEach((fruta)=>{console.log(fruta)})
+        //Version corta
+        frutas.forEach(fruta=>console.log(fruta))
+
+        //Operador spread: ...
+
+        //Destructuring
+        const miObjeto = {
+            valor1:"valor"
+        }
+        //const valor1 = miObjeto.valor1
+        const {valor1} = miObjeto
+        console.log(valor1)
+        const {valor1:valor2} = miObjeto // se renombra la constante a valor2
+        console.log(valor2)
+
+        //Operador ternario: Expresion
+        const usuarioActivo = true
+        const mensaje = usuarioActivo?"Hola":"Bievenido de nuevo"
+        console.log(mensaje)
+
+
+        //map: devuelve un NUEVO arreglo
+        const nuevasFrutas = frutas.map(fruta=>fruta==="🍓"?"🍒":fruta)
+
+        console.log(nuevasFrutas)
+        console.log(frutas) // frutas sigue conteniendo lo mismo
+
+        //filter: Filtrar elementos del array
+
+        const filtro = frutas.filter(fruta=>fruta==="🍓")
+        //Es lo mismo que:
+        //const filtro = frutas.filter(fruta=>fruta==="🍓"?fruta:undefined)
+
+        console.log(filtro)
+
+
+    </script>
+</body>
+</html>
